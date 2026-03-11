@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Content.css"
+
+const API_URL = import.meta.env.VITE_API_URL
+
 function Content() {
   // const [count, setCount] = useState(0);
   const [products, setProducts] = useState([]);
@@ -11,7 +14,7 @@ function Content() {
     setCount(count - 1);
   };
   const fetchProducts = async () => {
-    const url = "https://backend-app-z2t4.onrender.com/store";
+    const url = `${API_URL}/store`;
     const res = await axios.get(url);
     setProducts(res.data);
   };
@@ -28,10 +31,11 @@ function Content() {
       <div className="row">
         {products.map((product) => (
           <div className="box">
-            <img src={`https://backend-app-z2t4.onrender.com/${product.imageUrl}`} width="300px" alt="" />
+            <img src={`${API_URL}/${product.imageUrl}`} width="300px" alt="" />
             <h3>{product.name}</h3>
             <p>{product.desc}</p>
             <h4>{product.price}</h4>
+            <p><button>Add to Cart</button></p>
           </div>
         ))}
       </div>
