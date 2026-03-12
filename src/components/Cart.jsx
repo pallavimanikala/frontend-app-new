@@ -1,7 +1,8 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AppContext } from "../App";
 function Cart() {
   const { cart, setCart } = useContext(AppContext);
+  const [orderValue, setOrderValue] = useState(0);
   const increment = (id) => {
     setCart(
       cart.map((item) => {
@@ -24,6 +25,15 @@ function Cart() {
       }),
     );
   };
+
+  useEffect(() => {
+    setOrderValue(
+      cart.reduce((sum, item) => {
+        return sum + item.quantity * item.price;
+      }, 0),
+    );
+  }, [cart]);
+
   return (
     <div>
       <h1>My Cart</h1>
@@ -38,6 +48,12 @@ function Cart() {
           </li>
         ))}
       </ol>
+      <p>
+        <strong>Order Value:{orderValue}</strong>
+      </p>
+      <p>
+        <button>Place Order</button>
+      </p>
     </div>
   );
 }
