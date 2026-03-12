@@ -11,6 +11,14 @@
   },
   "dependencies": {
     "axios": "^1.13.6",
+    "dotenv": "^17.3.1",
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.19.0",
+    "mon": "^0.0.8",
+    "mongoose": "^9.3.0",
+    "node": "^22.22.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
@@ -25,5 +33,18 @@
     "globals": "^16.5.0",
     "react-router-dom": "^7.13.1",
     "vite": "^7.3.1"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BhavaniJayarapu/frontend-app-new.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BhavaniJayarapu/frontend-app-new/issues"
+  },
+  "homepage": "https://github.com/BhavaniJayarapu/frontend-app-new#readme"
 }
